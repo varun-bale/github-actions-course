@@ -9,4 +9,18 @@ jobs :
             - name : Multiline commands
               run : |
                  node -v
-                 npm -v     
+                 npm -v   
+    parallel-macos-commands:
+        runs-on : macos-latest
+        steps:
+            - name : view softwate version
+              run : sw_vers
+
+    dependent-job:
+        runs-on : windows-latest
+        needs : run-shell-commands
+        steps:
+            - name : echo string
+              run : Write-Output "Windows machine"
+            - name : error display
+              run : something            
