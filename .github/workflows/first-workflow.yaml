@@ -23,4 +23,4 @@ jobs :
             - name : echo string
               run : Write-Output "Windows machine"
             - name : error display
-              run : something test         
+              run : something skip         
